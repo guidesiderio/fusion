@@ -66,7 +66,6 @@ class TeamMember(Base):
         null=True,
     )
     bio = models.TextField("Bio", max_length=500, blank=True)
-    email = models.EmailField("Email", max_length=254, blank=True)
     facebook = models.URLField("Facebook", max_length=200, blank=True)
     twitter = models.URLField("Twitter", max_length=200, blank=True)
     instagram = models.URLField("Instagram", max_length=200, blank=True)
