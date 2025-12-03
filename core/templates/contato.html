@@ -8,7 +8,8 @@
     <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
       <div class="col-lg-7 col-md-12 col-sm-12">
         <div class="contact-block">
-          <form id="contactForm">
+          <form id="contactForm" method="post" action="{% url 'index' %}" novalidate="novalidate">
+            {% csrf_token %}
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -43,7 +44,8 @@
                   <input
                     type="text"
                     placeholder="Subject"
-                    id="msg_subject"
+                    id="subject"
+                    name="subject"
                     class="form-control"
                     required
                     data-error="Please enter your subject"
@@ -56,6 +58,7 @@
                   <textarea
                     class="form-control"
                     id="message"
+                    name="message"
                     placeholder="Your Message"
                     rows="7"
                     data-error="Write your message"
